@@ -1,0 +1,173 @@
+body{
+    background-image: url(BackgroundImages/MountainsColorful.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+    background-color: white;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 60px;
+}
+
+footer .back-to-top img{
+    height: 30px;
+    width: 30px;
+}
+
+.back-to-top:hover{
+    transform: scale(1.15);
+}
+
+.navbar{
+    position: relative;
+    display: flex;
+    height: auto;
+    background-color: white;
+    border-radius: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .navbar .search{
+    position: absolute;
+    right: 0px;
+    padding: 40px 30px;
+    color:white;
+    width: auto;
+}
+
+.navbar li{
+    float: left;
+    list-style: none;
+    padding: 30px 30px;
+}
+
+.navbar li a{
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar li a:hover{
+    color: cornflowerblue;
+}
+
+.navbar ul{
+    overflow: auto;
+}
+
+.siteName{
+    padding: 10px 170px;
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy;
+    color: cadetblue;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+
+.siteName .slogan{
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.search{
+    float: right;
+    margin-top: 5px;
+    color:white;
+    width: auto;
+}
+
+.navbar input{
+    width: 250px;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 30px;
+    padding: 3px 0px 3px 5px;
+}
+
+footer .siteName .slogan p{
+    text-align: center;
+    font-size: smaller;
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+h4{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+}
+
+.card{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+    box-shadow: 0 4px 8px 0 black;
+    width: 220px;
+    height: 250px;
+    border-top-left-radius: 115px;
+    border-top-right-radius: 115px;
+    transition: 0.3s;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.column{
+    float: left;
+    width: 16.6%;
+}
+
+.row{
+    margin-left: auto;
+    margin-right: auto;
+    align-self: auto;
+    margin-top: 15px;
+}
+
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row .column .card img{
+    border-top-left-radius: 115px;
+    border-top-right-radius: 115px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.row .column .card .ArtistName{
+    font-family: fantasy;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.card:hover{
+    transform: scale(1.15);
+    box-shadow: 0 8px 16px 0 black;
+}
+
+@media screen and (max-width: 600px) {.column
+{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}};

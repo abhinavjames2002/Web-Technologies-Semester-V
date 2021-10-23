@@ -1,0 +1,201 @@
+body{
+    background-image: url(BackgroundImages/Beach.jpg);
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.siteName{
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px;
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy;
+    color: cadetblue;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+
+.siteName .slogan{
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.siteName a{
+    text-decoration: none;
+    color: cadetblue;
+}
+
+.outer-container{
+    padding: 20px 0px;
+    border-radius: 100px;
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-container .inner-container{
+    box-shadow: 1px 8px 16px 2px rgb(36, 34, 34);
+    border-radius: 50px;
+    background-color: transparent;
+    width: 400px;
+    height: auto;
+    text-align: center;
+    padding: 10px 10px 10px 0px;
+}
+
+#PreRequisiteSection{
+    margin: 5px 0px 20px;
+    border-radius: 100px;
+    padding: 20px 0px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#PreRequisiteSection #inner-container{
+    box-shadow: 1px 8px 16px 2px rgb(36, 34, 34);
+    width: auto;
+    height: auto;
+    padding: 0px 50px;
+    background-color: transparent;
+    border-radius: 50px;
+}
+
+#PreRequisiteSection #inner-container ul{
+    padding: 0px 15px 0px 5px;
+}
+
+#PreRequisiteSection #inner-container ul li{
+    padding: 5px 0px;
+    list-style: none;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: 1px double black;
+    border-radius: 15px;
+    font-family: cursive;
+    margin: 10px;
+}
+
+.outer-container .inner-container form #songName,#artistName{
+    width: 250px;
+    border: 2px solid black;
+    padding: 6px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+#searchBox{
+    width: 250px;
+    border: 2px solid black;
+    padding: 6px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+form section{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 40px;
+    margin: 10px 30px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+form section label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+}
+
+form textarea{
+    width: 250px;
+    border: 2px solid black;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+h2{
+    font-family: fantasy;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: rgb(255, 81, 81);
+    font-size: 40px;
+}
+
+#inner-container p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+form p{
+    font-family: fantasy;
+    font-size: 25px;
+    color: black;
+    font-weight: light;
+    letter-spacing: 1px;
+    margin: 0px 10px;
+    padding: 8px 16px;
+}
+
+#AddBtn,#DeleteBtn,#UpdateBtn,#SearchBtn,#SubmitBtn,#resetButton{
+    background-color: #da2768;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    padding: 15px 32px;
+    margin: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px 0 black;
+}
+
+#AddBtn:hover{
+    box-shadow: 0 8px 16px 0 black;
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+#DeleteBtn:hover{
+    box-shadow: 0 8px 16px 0 black;
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+#resetButton:hover{
+    box-shadow: 0 8px 16px 0 black;
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+#UpdateBtn:hover{
+    box-shadow: 0 8px 16px 0 black;
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+#SearchBtn:hover{
+    box-shadow: 0 8px 16px 0 black;
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+#SubmitBtn:hover{
+    box-shadow: 0 8px 16px 0 black;
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+
+

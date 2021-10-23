@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD OPERATION</title>
+    <style>
+        @import url(WebsiteOperations.css);
+    </style>
+</head>
+
+<body>
+    <div class="siteName">
+        <a href="myFavMusic.html">VIBEZ</a>
+        <div class="slogan">
+            Keep listening. Keep vibin'
+        </div>
+    </div>
+
+    <section id="PreRequisiteSection">
+        <div id="inner-container">
+            <h2>ATTENTION VIEWER</h2>
+            <p>PRE REQUISITES FOR THE ADD OPERATION ARE LISTED BELOW</p>
+            <ul>
+                <li>Make sure you have thought of a song name</li>
+                <li>Make sure you have thought of an artist name</li>
+                <li>Make sure you have an image to be applied as album cover</li>
+                <li>Make sure you have artist image or any image</li>
+                <li>Make sure you have a song or any audio file (.mp3)</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="outer-container">
+        <div class="inner-container">
+            <form action="" method="post">
+                <p>GENERAL DETAILS</p>
+                <input type="text" id="songName" placeholder="Enter name of the song" required>
+                <input type="text" id="artistName" placeholder="Enter name of the artist"><hr>
+
+                <p>UPLOAD SECTION</p>
+                <section>
+                    <label for="albumCover">UPLOAD THE ALBUM COVER</label>
+                    <input type="file" id="albumCover">
+                </section>
+                
+                <section>
+                    <label for="artistImage">UPLOAD THE ARTIST IMAGE</label>
+                    <input type="file" id="artistImage">
+                </section>
+                
+                <section>
+                    <label for="song">UPLOAD THE SONG</label>
+                    <input type="file" id="song" required>
+                </section><hr>
+            </form>
+
+            <button type="reset" id="resetButton">RESET</button>
+            <button type="submit" id="AddBtn">ADD</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Signup Page</title>
+    <style>
+        @import url(SignupLoginPageCSS.css);
+    </style>
+</head>
+
+<body>
+    <div class="siteName">
+        VIBEZ
+        <div class="slogan">
+            Keep listening. Keep vibin'
+        </div>
+    </div>
+
+    <div class="outer-container">
+        <div class="inner-container">
+            <form method="POST">
+                <b>GENERAL DETAILS</b><br>
+                <input type="text" id="FirstName" placeholder="First Name" required><br>
+                <input type="text" id="MiddleNmae" placeholder="Middle Name"><br>
+                <input type="text" id="LastName" placeholder="Last Name" required><br>
+                <input type="date" id="DateOfBirth"><br>
+                
+                <select>  
+                    <option value="--SELECT--">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                </select><br><hr>
+
+                <b>CONTACT DETAILS</b><br>
+                <input type="email" id="email" placeholder="e-mail ID" size="40" required><br>
+                <input type="tel" id="PhoneNumber" placeholder="Phone Number" size="10" required><br><hr>
+                
+                <b>LOGIN CREDENTIALS</b><br>
+                <input type="text" id="UserName" placeholder="User Name" required><br>
+                <input type="password" id="Password" placeholder="Password" required><br>
+                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" required><br><hr>
+            </form>
+
+            <button type="reset" id="resetButton">RESET</button>
+            <button type="submit" id="SignUpBtn">SIGN-UP</button>
+            
+        </div>
+    </div>
+
+    <p class="QuestionToTheUser">
+        <a href="LoginPage.html">ARE YOU ALREADY A MEMBER ?</a></p>
+</body>
+</html>
