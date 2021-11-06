@@ -9,6 +9,368 @@
     <style>
         @import url(SignupLoginPageCSS.css);
     </style>
+
+    <script>
+        function verifyFirstName()
+        {   
+            var fname = document.getElementById("FirstName")
+            var errorMessages = document.getElementById("errorMessages")
+        
+            if(fname.value.length > 20)
+            {
+                errorMessages.innerHTML = "FIRST NAME IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                fname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(fname.value.trim() == "")
+            {
+                errorMessages.innerHTML = "FIRST NAME CANNOT BE EMPTY"
+                errorMessages.style.border = "5px solid red"
+                fname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(fname.value.length <= 3)
+            {
+                errorMessages.innerHTML = "FIRST NAME IS TOO SHORT"
+                errorMessages.style.border = "5px solid red"
+                fname.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                fname.style.border = "5px solid #7FFF00"  //HEX code for Chartreuse Color
+                errorMessages.innerHTML = "FIRST NAME VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyMiddleName()
+        {
+            var mname = document.getElementById("MiddleName")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if(mname.value.length > 20)
+            {
+                errorMessages.innerHTML = "MIDDLE NAME IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                mname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(mname.value.length <= 3)
+            {
+                errorMessages.innerHTML = "MIDDLE NAME IS TOO SHORT"
+                errorMessages.style.border = "5px solid red"
+                mname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(mname.value.trim() == "")
+            {
+                errorMessages.innerHTML = "MIDDLE NAME CANNOT BE EMPTY"
+                errorMessages.style.border = "5px solid red"
+                mname.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                mname.style.border = "5px solid #7FFF00"  //HEX code for Chartreuse Color
+                errorMessages.innerHTML = "MIDDLE NAME VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyLastName()
+        {
+             var lname = document.getElementById("LastName")
+             var errorMessages = document.getElementById("errorMessages")
+             if(lname.value.length > 20)
+             {
+                 errorMessages.innerHTML = "LAST NAME IS TOO LONG"
+                 errorMessages.style.border = "5px solid red"
+                 lname.style.border = "5px solid red"
+                 return false
+             }
+             else if(lname.value.length <= 3)
+             {
+                 errorMessages.innerHTML = "LAST NAME IS TOO SHORT"
+                 errorMessages.style.border = "5px solid red"
+                 lname.style.border = "5px solid red"
+                 return false
+             }
+             else if(lname.value.trim() == "")
+             {
+                 errorMessages.innerHTML = "LAST NAME CANNOT BE EMPTY"
+                 errorMessages.style.border = "5px solid red"
+                 lname.style.border = "5px solid red"
+                 return false
+             }
+             else
+             {
+                 lname.style.border = "5px solid #7FFF00"  //HEX code for Chartreuse Color
+                 errorMessages.innerHTML = "LAST NAME VERIFIED"
+                 errorMessages.style.border = "5px solid #7FFF00"
+                 return true
+             }
+        }
+
+        function verifyPassword()
+        {
+            var pwd = document.getElementById("Password")
+            var errorMessages = document.getElementById("errorMessages")
+           
+           if(pwd.value.length < 8)
+           {
+               errorMessages.innerHTML = "PASSWORD MUST BE ATLEAST 8 CHARACTERS LONG"
+               pwd.style.border = "5px solid red"
+               errorMessages.style.border = "5px solid red"
+               return false
+           }
+           
+           else if(pwd.value.length >= 20)
+           {
+               errorMessages.innerHTML = "PASSWORD IS TOO LONG"
+               pwd.style.border = "5px solid red"
+               errorMessages.style.border = "5px solid red"
+               return false
+           }
+           
+           else
+           {
+               pwd.style.border = "5px solid #7FFF00"
+               errorMessages.innerHTML = "VALID PASSWORD"
+               errorMessages.style.border = "5px solid #7FFF00"
+               return true
+            }
+        }
+
+        function verifyUserName()
+        {
+            var uname = document.getElementById("UserName")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if(uname.value.length > 20)
+            {
+                errorMessages.innerHTML = "USER NAME IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                lname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(uname.value.length < 6)
+            {
+                errorMessages.innerHTML = "USER NAME IS TOO SHORT"
+                errorMessages.style.border = "5px solid red"
+                uname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(uname.value.trim() == "")
+            {
+                errorMessages.innerHTML = "USER NAME CANNOT BE EMPTY"
+                errorMessages.style.border = "5px solid red"
+                uname.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                uname.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "USERNAME VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyConfirmPassword()
+        {
+            var cpwd = document.getElementById("ConfirmPassword")
+            var pwd = document.getElementById("Password")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if(pwd.value == cpwd.value && pwd.value.length >= 8)
+            {
+                pwd.style.border = "5px solid #7FFF00"
+                cpwd.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "PASSWORDS MATCH"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+
+            else if(cpwd.value.trim() == "" && pwd.value.trim() == "")
+            {
+                pwd.style.border = "5px solid red"
+                cpwd.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                errorMessages.innerHTML = "PASSWORDS CANNOT BE EMPTY"
+                return false
+            }
+
+            else if(pwd.value == cpwd.value && pwd.value.length < 8)
+            {
+                pwd.style.border = "5px solid red"
+                cpwd.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                errorMessages.innerHTML = "PASSWORDS MATCH, BUT DO NOT HAVE THE REQUIRED LENGTH"
+                return false
+            }
+
+            else
+            {
+                pwd.style.border = "5px solid red"
+                cpwd.style.border = "5px solid red"
+                errorMessages.innerHTML = "PASSWORDS DO NOT MATCH"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+        }
+
+        function verifyPhoneNumber()
+        {
+            var phno = document.getElementById("PhoneNumber")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if(phno.value.length > 10  ||  phno.value.length < 10)
+            {
+                errorMessages.innerHTML = "PLEASE ENTER 10 DIGIT PHONE NUMBER"
+                phno.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else if(phno.value.trim() == "")
+            {
+                errorMessages.innerHTML = "PHONE NUMBER CANNOT BE EMPTY"
+                phno.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                phno.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "VALID PHONE NUMBER"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyGender()
+        {
+            var gender = document.getElementById("gender")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if(gender.options[gender.selectedIndex].value == '--SELECT--')
+            {
+                errorMessages.innerHTML = "PLEASE SELECT YOUR GENDER FROM THE DROPDOWN"
+                errorMessages.style.border = "5px solid red"
+                gender.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                gender.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "GENDER VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyEmail()
+        {
+            var email = document.getElementById("email")
+            var errorMessages = document.getElementById("errorMessages")
+
+             if(email.value.length >=40)
+            {
+                errorMessages.innerHTML = "EMAIL ID IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                email.style.border = "5px solid red"
+                return false
+            }
+
+            else if(email.value.length <= 10)
+            {
+                errorMessages.innerHTML = "EMAIL ID IS TOO SHORT"
+                errorMessages.style.border = "5px solid red"
+                email.style.border = "5px solid red"
+                return false
+            }
+
+            else if(email.value.trim() == "")
+            {
+                errorMessages.innerHTML = "EMAIL ID CANNOT BE EMPTY"
+                errorMessages.style.border = "5px solid red"
+                email.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                email.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "EMAIL ID VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            } 
+        }
+
+        function verifyDOB()
+        {
+            var dob = document.getElementById("DateOfBirth")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if(dob.value < "01-01-2007")
+            {
+                dob.style.border = "5px solid red"
+                errorMessages.innerHTML = "YOU MUST BE ATLEAST 13 YEARS OLD TO SIGN-UP"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                dob.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "DATE OF BIRTH VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function Validation()
+        {
+            var errorMessages = document.getElementById("errorMessages")
+            var a = verifyFirstName()
+            var b = verifyLastName()
+            var c = verifyMiddleName()
+            var d = verifyDOB()
+            var e = verifyGender()
+            var f = verifyEmail()
+            var g = verifyPhoneNumber()
+            var h = verifyUserName()
+            var i = verifyPassword()
+            var j = verifyConfirmPassword()
+
+            if( a == true && b == true && c == true && d == true && e == true && f == true && g == true && h == true && i == true && j == true)
+            {
+                return true
+            }
+
+            else
+            {
+                errorMessages.innerHTML = "PLEASE ENSURE ALL INPUT FIELDS ARE FILLED BEFORE SUBMITTING THE FORM"
+                errorMessages.style.border + "5px solid red"
+                return false
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -19,16 +381,25 @@
         </div>
     </div>
 
+    <div id="errorMessages">VALIDATION MESSAGES WILL BE SHOWN HERE
+        <div>
+            <img src="Icons/TickIcon.png" alt="correct icon" width="50px" height="50px" id="correctInfo">
+        </div>
+        <div>
+            <img src="Icons/WrongIcon.png" alt="wrong icon" width="45px" height="45px" id="wrongInfo">
+        </div>
+    </div>
+
     <div class="outer-container">
         <div class="inner-container">
-            <form method="POST">
+            <form onsubmit="return Validation()" action="LoginPage.html" method="POST" id="Sign-UpForm">
                 <b>GENERAL DETAILS</b><br>
-                <input type="text" id="FirstName" placeholder="First Name" required><br>
-                <input type="text" id="MiddleNmae" placeholder="Middle Name"><br>
-                <input type="text" id="LastName" placeholder="Last Name" required><br>
-                <input type="date" id="DateOfBirth"><br>
+                <input type="text" id="FirstName" placeholder="First Name" oninput="return verifyFirstName()"><br>
+                <input type="text" id="MiddleName" placeholder="Middle Name" oninput="return verifyMiddleName()"><br>
+                <input type="text" id="LastName" placeholder="Last Name" oninput="return verifyLastName()"><br>
+                <input type="date" id="DateOfBirth" oninput="return verifyDOB()"><br>
                 
-                <select>  
+                <select id="gender" oninput="return verifyGender()">  
                     <option value="--SELECT--">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -36,18 +407,18 @@
                 </select><br><hr>
 
                 <b>CONTACT DETAILS</b><br>
-                <input type="email" id="email" placeholder="e-mail ID" size="40" required><br>
-                <input type="tel" id="PhoneNumber" placeholder="Phone Number" size="10" required><br><hr>
+                <input type="email" id="email" placeholder="e-mail ID" oninput="return verifyEmail()"><br>
+                <input type="tel" id="PhoneNumber" placeholder="Phone Number" oninput="return verifyPhoneNumber()"><br><hr>
                 
                 <b>LOGIN CREDENTIALS</b><br>
-                <input type="text" id="UserName" placeholder="User Name" required><br>
-                <input type="password" id="Password" placeholder="Password" required><br>
-                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" required><br><hr>
-            </form>
+                <input type="text" id="UserName" placeholder="User Name" oninput="return verifyUserName()"><br>
+                <input type="password" id="Password" placeholder="Password" oninput="return verifyPassword()"><br>
+                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" oninput="return verifyConfirmPassword()"><br><hr>
 
-            <button type="reset" id="resetButton">RESET</button>
-            <button type="submit" id="SignUpBtn">SIGN-UP</button>
+                <input type="reset" id="resetButton" value="RESET">
+                <input type="submit" id="SignUpBtn" value="SIGN-UP">
             
+            </form>
         </div>
     </div>
 

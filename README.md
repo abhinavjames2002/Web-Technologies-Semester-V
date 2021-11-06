@@ -1,5 +1,6 @@
 # Web-Tech-Sem---V
  Mini Project Semester V
+<<<<<<< Updated upstream
 
 This is a sleek music website that consists of cards 
 containing album covers of some of my favourite songs.
@@ -26,3 +27,6 @@ CHEERS 🥂
 
 
 
+=======
+ 
+>>>>>>> Stashed changes
