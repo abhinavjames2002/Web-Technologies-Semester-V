@@ -18,6 +18,12 @@ body{
     letter-spacing: 3px;
 }
 
+.siteName a{
+    text-decoration: none;
+    color: cadetblue;
+    cursor: pointer;
+}
+
 .siteName .slogan{
     text-align: center;
     font-size: 15px;
@@ -26,7 +32,8 @@ body{
 }
 
 #errorMessages{
-    position: relative;
+    position: sticky;
+    top: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     text-align: center;

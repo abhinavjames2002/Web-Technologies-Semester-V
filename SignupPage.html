@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,20 +12,29 @@
     </style>
 
     <script>
-        function verifyFirstName()
-        {   
+
+        function verifyFirstName() 
+        {
             var fname = document.getElementById("FirstName")
             var errorMessages = document.getElementById("errorMessages")
-        
-            if(fname.value.length > 20)
+
+            if (fname.value.length > 20) 
             {
                 errorMessages.innerHTML = "FIRST NAME IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                fname.style.border = "5px solid red"  
+                return false
+            }
+
+            else if(fname.value.search(/^[A-Z]/) == -1)
+            {
+                errorMessages.innerHTML = "FIRST NAME SHOULD START WITH AN UPPERCASE LETTER"
                 errorMessages.style.border = "5px solid red"
                 fname.style.border = "5px solid red"
                 return false
             }
 
-            else if(fname.value.trim() == "")
+            else if (fname.value.trim() == "") 
             {
                 errorMessages.innerHTML = "FIRST NAME CANNOT BE EMPTY"
                 errorMessages.style.border = "5px solid red"
@@ -32,7 +42,7 @@
                 return false
             }
 
-            else if(fname.value.length <= 3)
+            else if (fname.value.length <= 3) 
             {
                 errorMessages.innerHTML = "FIRST NAME IS TOO SHORT"
                 errorMessages.style.border = "5px solid red"
@@ -40,131 +50,259 @@
                 return false
             }
 
-            else
+            else 
             {
-                fname.style.border = "5px solid #7FFF00"  //HEX code for Chartreuse Color
+                fname.style.border = "5px solid #7FFF00"
                 errorMessages.innerHTML = "FIRST NAME VERIFIED"
                 errorMessages.style.border = "5px solid #7FFF00"
                 return true
             }
         }
 
-        function verifyMiddleName()
+        function verifyMiddleName() 
         {
             var mname = document.getElementById("MiddleName")
             var errorMessages = document.getElementById("errorMessages")
 
-            if(mname.value.length > 20)
+            if (mname.value.length > 0 && mname.value.length <= 20) 
+            {
+                if(mname.value.length <= 3) 
+                {
+                    errorMessages.innerHTML = "MIDDLE NAME IS TOO SHORT"
+                    errorMessages.style.border = "5px solid red"
+                    mname.style.border = "5px solid red"
+                    return false
+                }
+    
+                else if(mname.value.trim() == "") 
+                {
+                    errorMessages.innerHTML = "MIDDLE NAME CANNOT BE EMPTY"
+                    errorMessages.style.border = "5px solid red"
+                    mname.style.border = "5px solid red"
+                    return false
+                }   
+
+                else if(mname.value.search(/^[A-Z]/) == -1)
+                {
+                    errorMessages.innerHTML = "MIDDLE NAME SHOULD START WITH AN UPPERCASE LETTER"
+                    errorMessages.style.border = "5px solid red"
+                    mname.style.border = "5px solid red"
+                    return false
+                }
+
+                else
+                {
+                    mname.style.border = "5px solid #7FFF00"  
+                    errorMessages.innerHTML = "MIDDLE NAME VERIFIED"
+                    errorMessages.style.border = "5px solid #7FFF00"
+                    return true
+                }
+            }
+
+            else if(mname.value.length > 20) 
             {
                 errorMessages.innerHTML = "MIDDLE NAME IS TOO LONG"
                 errorMessages.style.border = "5px solid red"
                 mname.style.border = "5px solid red"
                 return false
-            }
+            }            
 
-            else if(mname.value.length <= 3)
+            else 
             {
-                errorMessages.innerHTML = "MIDDLE NAME IS TOO SHORT"
-                errorMessages.style.border = "5px solid red"
-                mname.style.border = "5px solid red"
-                return false
-            }
-
-            else if(mname.value.trim() == "")
-            {
-                errorMessages.innerHTML = "MIDDLE NAME CANNOT BE EMPTY"
-                errorMessages.style.border = "5px solid red"
-                mname.style.border = "5px solid red"
-                return false
-            }
-
-            else
-            {
-                mname.style.border = "5px solid #7FFF00"  //HEX code for Chartreuse Color
-                errorMessages.innerHTML = "MIDDLE NAME VERIFIED"
-                errorMessages.style.border = "5px solid #7FFF00"
+                mname.style.border = "5px solid lightskyblue"  
+                errorMessages.innerHTML = "FINE, MIDDLE NAME NOT ENTERED"
+                errorMessages.style.border = "5px solid lightskyblue"
                 return true
             }
         }
 
-        function verifyLastName()
+        function verifyLastName() 
         {
-             var lname = document.getElementById("LastName")
-             var errorMessages = document.getElementById("errorMessages")
-             if(lname.value.length > 20)
-             {
-                 errorMessages.innerHTML = "LAST NAME IS TOO LONG"
-                 errorMessages.style.border = "5px solid red"
-                 lname.style.border = "5px solid red"
-                 return false
-             }
-             else if(lname.value.length <= 3)
-             {
-                 errorMessages.innerHTML = "LAST NAME IS TOO SHORT"
-                 errorMessages.style.border = "5px solid red"
-                 lname.style.border = "5px solid red"
-                 return false
-             }
-             else if(lname.value.trim() == "")
-             {
-                 errorMessages.innerHTML = "LAST NAME CANNOT BE EMPTY"
-                 errorMessages.style.border = "5px solid red"
-                 lname.style.border = "5px solid red"
-                 return false
-             }
-             else
-             {
-                 lname.style.border = "5px solid #7FFF00"  //HEX code for Chartreuse Color
-                 errorMessages.innerHTML = "LAST NAME VERIFIED"
-                 errorMessages.style.border = "5px solid #7FFF00"
-                 return true
-             }
-        }
-
-        function verifyPassword()
-        {
-            var pwd = document.getElementById("Password")
-            var errorMessages = document.getElementById("errorMessages")
-           
-           if(pwd.value.length < 8)
-           {
-               errorMessages.innerHTML = "PASSWORD MUST BE ATLEAST 8 CHARACTERS LONG"
-               pwd.style.border = "5px solid red"
-               errorMessages.style.border = "5px solid red"
-               return false
-           }
-           
-           else if(pwd.value.length >= 20)
-           {
-               errorMessages.innerHTML = "PASSWORD IS TOO LONG"
-               pwd.style.border = "5px solid red"
-               errorMessages.style.border = "5px solid red"
-               return false
-           }
-           
-           else
-           {
-               pwd.style.border = "5px solid #7FFF00"
-               errorMessages.innerHTML = "VALID PASSWORD"
-               errorMessages.style.border = "5px solid #7FFF00"
-               return true
-            }
-        }
-
-        function verifyUserName()
-        {
-            var uname = document.getElementById("UserName")
+            var lname = document.getElementById("LastName")
             var errorMessages = document.getElementById("errorMessages")
 
-            if(uname.value.length > 20)
+            if(lname.value.length < 3)
             {
-                errorMessages.innerHTML = "USER NAME IS TOO LONG"
+                errorMessages.innerHTML = "LAST NAME IS TOO SHORT"
                 errorMessages.style.border = "5px solid red"
                 lname.style.border = "5px solid red"
                 return false
             }
 
-            else if(uname.value.length < 6)
+            else if(lname.value.length > 20)
+            {
+                errorMessages.innerHTML = "LAST NAME IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                lname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(lname.value.search(/^[A-Z]/) == -1)
+            {
+                errorMessages.innerHTML = "LAST NAME SHOULD START WITH AN UPPECASE LETTER"
+                errorMessages.style.border = "5px solid red"
+                lname.style.border = "5px solid red"
+                return false
+            }
+
+            else if(lname.value.trim() == "")
+            {
+                errorMessages.innerHTML = "LAST NAME CANNOT BE EMPTY"
+                errorMessages.style.border = "5px solid red"
+                lname.style.border = "5px solid red"
+                return false
+            }
+
+            else
+            {
+                errorMessages.innerHTML = "LAST NAME VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                lname.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyGender() 
+        {
+            var gender = document.getElementById("gender")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if (gender.options[gender.selectedIndex].value == '--SELECT--') {
+                errorMessages.innerHTML = "PLEASE SELECT YOUR GENDER FROM THE DROPDOWN"
+                errorMessages.style.border = "5px solid red"
+                gender.style.border = "5px solid red"
+                return false
+            }
+
+            else {
+                gender.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "GENDER VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyDOB() 
+        {
+            var dob = document.getElementById("DateOfBirth")
+            var errorMessages = document.getElementById("errorMessages")
+
+            if (dob.value < "01-01-2007") {
+                dob.style.border = "5px solid red"
+                errorMessages.innerHTML = "YOU MUST BE ATLEAST 13 YEARS OLD TO SIGN-UP"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else 
+            {
+                dob.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "DATE OF BIRTH VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+        }
+
+        function verifyPassword() 
+        {
+            var pwd = document.getElementById("Password")
+            var errorMessages = document.getElementById("errorMessages")
+            var secret = document.getElementById("pwd-creation-instructions")
+            var reqList = document.getElementById("pwd-requirement-list") 
+
+            if (pwd.value.length < 8) {
+                errorMessages.innerHTML = "PASSWORD MUST BE ATLEAST 8 CHARACTERS LONG"
+                pwd.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else if (pwd.value.length > 20) {
+                errorMessages.innerHTML = "PASSWORD IS TOO LONG"
+                pwd.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else if (pwd.value.trim() == "") {
+                errorMessages.innerHTML = "PASSWORD CANNOT BE EMPTY"
+                pwd.style.border = "5px solid red"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            else if (pwd.value.search(/[A-Z]/) == -1) {
+                errorMessages.innerHTML = "ATLEAST ONE UPPERCASE ALPHABET MUST BE PRESENT IN PASSWORD"
+                errorMessages.style.border = "5px solid red"
+                pwd.style.border = "5px solid red"
+                return false
+            }
+
+            else if (pwd.value.search(/[a-z]/) == -1) {
+                errorMessages.innerHTML = "ATLEAST ONE LOWERCASE ALPHABET MUST BE PRESENT IN PASSWORD"
+                errorMessages.style.border = "5px solid red"
+                pwd.style.border = "5px solid red"
+                return false
+            }
+
+            else if (pwd.value.search(/[0-9]/) == -1) {
+                errorMessages.innerHTML = "ATLEAST ONE DIGIT MUST BE PRESENT IN PASSWORD"
+                errorMessages.style.border = "5px solid red"
+                pwd.style.border = "5px solid red"
+                return false
+            }
+
+            else if (pwd.value.search(/[\@\#\$\%\&\;\:\.\,]/) == -1) {
+                errorMessages.innerHTML = "ATLEAST ONE SPECIAL CHARACTER MUST BE PRESENT IN PASSWORD"
+                errorMessages.style.border = "5px solid red"
+                pwd.style.border = "5px solid red"
+                return false
+            }
+
+            else 
+            {
+                errorMessages.innerHTML = "PASSWORD VERIFIED"
+                pwd.style.border = "5px solid #7FFF00"
+                errorMessages.style.border = "5px solid #7FFF00"
+
+                secret.style.borderRadius = "30px"
+                secret.style.backgroundColor = "lightgreen"
+                secret.innerHTML = "Psst ! That's a great password <br> Don't worry...I'll keep it a secret !! <br> *winks*"
+                reqList.style.visibility = "hidden"
+                return true
+            }
+        }
+
+        function verifyUserName() 
+        {
+            var uname = document.getElementById("UserName")
+            var errorMessages = document.getElementById("errorMessages")
+            var REuname = /^([a-z A-Z 0-9 \.-_]+)@([0-9]{4,9})$/
+
+            /*if (uname.value.length > 20) {
+                errorMessages.innerHTML = "USER NAME IS TOO LONG"
+                errorMessages.style.border = "5px solid red"
+                lname.style.border = "5px solid red"
+                return false
+            }*/
+
+            if(REuname.test(uname.value) == true)
+            {
+                uname.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "USERNAME VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true
+            }
+
+            else
+            {
+                uname.style.border = "5px solid red"
+                errorMessages.innerHTML = "INVALID USERNAME"
+                errorMessages.style.border = "5px solid red"
+                return false
+            }
+
+            /*else if (uname.value.length < 6) 
             {
                 errorMessages.innerHTML = "USER NAME IS TOO SHORT"
                 errorMessages.style.border = "5px solid red"
@@ -172,7 +310,7 @@
                 return false
             }
 
-            else if(uname.value.trim() == "")
+            else if (uname.value.trim() == "") 
             {
                 errorMessages.innerHTML = "USER NAME CANNOT BE EMPTY"
                 errorMessages.style.border = "5px solid red"
@@ -180,22 +318,21 @@
                 return false
             }
 
-            else
-            {
+            else {
                 uname.style.border = "5px solid #7FFF00"
                 errorMessages.innerHTML = "USERNAME VERIFIED"
                 errorMessages.style.border = "5px solid #7FFF00"
                 return true
-            }
+            }*/
         }
 
-        function verifyConfirmPassword()
+        function verifyConfirmPassword() 
         {
             var cpwd = document.getElementById("ConfirmPassword")
             var pwd = document.getElementById("Password")
             var errorMessages = document.getElementById("errorMessages")
 
-            if(pwd.value == cpwd.value && pwd.value.length >= 8)
+            if (pwd.value == cpwd.value && pwd.value.length >= 8) 
             {
                 pwd.style.border = "5px solid #7FFF00"
                 cpwd.style.border = "5px solid #7FFF00"
@@ -204,7 +341,7 @@
                 return true
             }
 
-            else if(cpwd.value.trim() == "" && pwd.value.trim() == "")
+            else if (cpwd.value.trim() == "" && pwd.value.trim() == "") 
             {
                 pwd.style.border = "5px solid red"
                 cpwd.style.border = "5px solid red"
@@ -213,7 +350,7 @@
                 return false
             }
 
-            else if(pwd.value == cpwd.value && pwd.value.length < 8)
+            else if (pwd.value == cpwd.value && pwd.value.length < 8) 
             {
                 pwd.style.border = "5px solid red"
                 cpwd.style.border = "5px solid red"
@@ -222,7 +359,7 @@
                 return false
             }
 
-            else
+            else 
             {
                 pwd.style.border = "5px solid red"
                 cpwd.style.border = "5px solid red"
@@ -232,72 +369,50 @@
             }
         }
 
-        function verifyPhoneNumber()
+        function verifyPhoneNumber() 
         {
             var phno = document.getElementById("PhoneNumber")
             var errorMessages = document.getElementById("errorMessages")
 
-            if(phno.value.length > 10  ||  phno.value.length < 10)
-            {
-                errorMessages.innerHTML = "PLEASE ENTER 10 DIGIT PHONE NUMBER"
-                phno.style.border = "5px solid red"
-                errorMessages.style.border = "5px solid red"
-                return false
-            }
-
-            else if(phno.value.trim() == "")
-            {
-                errorMessages.innerHTML = "PHONE NUMBER CANNOT BE EMPTY"
-                phno.style.border = "5px solid red"
-                errorMessages.style.border = "5px solid red"
-                return false
-            }
-
-            else
-            {
+            if (phno.value.search(/^[0-9]{10}$/) == 0) {
+                errorMessages.innerHTML = "PHONE NUMBER VERIFIED"
                 phno.style.border = "5px solid #7FFF00"
-                errorMessages.innerHTML = "VALID PHONE NUMBER"
                 errorMessages.style.border = "5px solid #7FFF00"
                 return true
             }
-        }
 
-        function verifyGender()
-        {
-            var gender = document.getElementById("gender")
-            var errorMessages = document.getElementById("errorMessages")
-
-            if(gender.options[gender.selectedIndex].value == '--SELECT--')
+            else 
             {
-                errorMessages.innerHTML = "PLEASE SELECT YOUR GENDER FROM THE DROPDOWN"
+                phno.style.border = "5px solid red"
+                errorMessages.innerHTML = "INVALID PHONE NUMBER"
                 errorMessages.style.border = "5px solid red"
-                gender.style.border = "5px solid red"
                 return false
             }
-
-            else
-            {
-                gender.style.border = "5px solid #7FFF00"
-                errorMessages.innerHTML = "GENDER VERIFIED"
-                errorMessages.style.border = "5px solid #7FFF00"
-                return true
-            }
         }
 
-        function verifyEmail()
+        function verifyEmail() 
         {
             var email = document.getElementById("email")
+            var emailRE = /^([a-z A-Z 0-9 -_\.]+)@([a-z A-Z 0-9 -]+)\.([a-z]+)([\.a-z]+)?$/
             var errorMessages = document.getElementById("errorMessages")
 
-             if(email.value.length >=40)
+            /*if(email.value.length > 40)
             {
                 errorMessages.innerHTML = "EMAIL ID IS TOO LONG"
                 errorMessages.style.border = "5px solid red"
                 email.style.border = "5px solid red"
                 return false
+            } */
+
+            if(emailRE.test(email.value) == true)
+            {
+                email.style.border = "5px solid #7FFF00"
+                errorMessages.innerHTML = "EMAIL ID VERIFIED"
+                errorMessages.style.border = "5px solid #7FFF00"
+                return true   
             }
 
-            else if(email.value.length <= 10)
+            /*else if (email.value.length <= 10) 
             {
                 errorMessages.innerHTML = "EMAIL ID IS TOO SHORT"
                 errorMessages.style.border = "5px solid red"
@@ -305,7 +420,7 @@
                 return false
             }
 
-            else if(email.value.trim() == "")
+            else if (email.value.trim() == "") 
             {
                 errorMessages.innerHTML = "EMAIL ID CANNOT BE EMPTY"
                 errorMessages.style.border = "5px solid red"
@@ -313,38 +428,24 @@
                 return false
             }
 
-            else
+            else if (email.value.search(/@/) == -1)
             {
-                email.style.border = "5px solid #7FFF00"
-                errorMessages.innerHTML = "EMAIL ID VERIFIED"
-                errorMessages.style.border = "5px solid #7FFF00"
-                return true
-            } 
-        }
+                errorMessages.innerHTML = "EMAIL ID SHOULD CONTAIN ONLY ONE '@'"
+                errorMessages.style.border = "5px solid red"
+                email.style.border = "5px solid red"
+                return false
+            } */
 
-        function verifyDOB()
-        {
-            var dob = document.getElementById("DateOfBirth")
-            var errorMessages = document.getElementById("errorMessages")
-
-            if(dob.value < "01-01-2007")
+            else 
             {
-                dob.style.border = "5px solid red"
-                errorMessages.innerHTML = "YOU MUST BE ATLEAST 13 YEARS OLD TO SIGN-UP"
+                email.style.border = "5px solid red"
+                errorMessages.innerHTML = "EMAIL ID INVALID"
                 errorMessages.style.border = "5px solid red"
                 return false
             }
-
-            else
-            {
-                dob.style.border = "5px solid #7FFF00"
-                errorMessages.innerHTML = "DATE OF BIRTH VERIFIED"
-                errorMessages.style.border = "5px solid #7FFF00"
-                return true
-            }
         }
 
-        function Validation()
+        function Validation() 
         {
             var errorMessages = document.getElementById("errorMessages")
             var a = verifyFirstName()
@@ -358,15 +459,16 @@
             var i = verifyPassword()
             var j = verifyConfirmPassword()
 
-            if( a == true && b == true && c == true && d == true && e == true && f == true && g == true && h == true && i == true && j == true)
+            if (a == true && b == true && c == true && d == true && e == true && f == true && g == true && h == true && i == true && j == true) 
             {
+                alert("SIGN-UP SUCCESSFULL !!")
                 return true
             }
 
-            else
+            else 
             {
                 errorMessages.innerHTML = "PLEASE ENSURE ALL INPUT FIELDS ARE FILLED BEFORE SUBMITTING THE FORM"
-                errorMessages.style.border + "5px solid red"
+                errorMessages.style.border = "5px solid red"
                 return false
             }
         }
@@ -375,7 +477,7 @@
 
 <body>
     <div class="siteName">
-        VIBEZ
+        <a href="myFavMusic.html">VIBEZ</a>
         <div class="slogan">
             Keep listening. Keep vibin'
         </div>
@@ -392,37 +494,56 @@
 
     <div class="outer-container">
         <div class="inner-container">
-            <form onsubmit="return Validation()" action="LoginPage.html" method="POST" id="Sign-UpForm">
+            <form onsubmit="return Validation()" action="LoginPage.html" method="" id="Sign-UpForm">
                 <b>GENERAL DETAILS</b><br>
-                <input type="text" id="FirstName" placeholder="First Name" oninput="return verifyFirstName()"><br>
-                <input type="text" id="MiddleName" placeholder="Middle Name" oninput="return verifyMiddleName()"><br>
-                <input type="text" id="LastName" placeholder="Last Name" oninput="return verifyLastName()"><br>
-                <input type="date" id="DateOfBirth" oninput="return verifyDOB()"><br>
-                
-                <select id="gender" oninput="return verifyGender()">  
+                <input type="text" id="FirstName" placeholder="First Name" autocomplete="off" oninput="return verifyFirstName()"><br>
+                <input type="text" id="MiddleName" placeholder="Middle Name (optional)" autocomplete="off" oninput="return verifyMiddleName()"><br>
+                <input type="text" id="LastName" placeholder="Last Name" autocomplete="off" oninput="return verifyLastName()"><br>
+                <input type="date" id="DateOfBirth" autocomplete="off" oninput="return verifyDOB()"><br>
+
+                <select id="gender" oninput="return verifyGender()">
                     <option value="--SELECT--">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Others">Others</option>
-                </select><br><hr>
+                </select><br>
+                <hr>
 
                 <b>CONTACT DETAILS</b><br>
-                <input type="email" id="email" placeholder="e-mail ID" oninput="return verifyEmail()"><br>
-                <input type="tel" id="PhoneNumber" placeholder="Phone Number" oninput="return verifyPhoneNumber()"><br><hr>
-                
+                <input type="email" id="email" placeholder="e-mail ID" autocomplete="off" oninput="return verifyEmail()"><br>
+                <input type="tel" id="PhoneNumber" placeholder="Phone Number" autocomplete="off" oninput="return verifyPhoneNumber()"><br>
+                <hr>
+
                 <b>LOGIN CREDENTIALS</b><br>
-                <input type="text" id="UserName" placeholder="User Name" oninput="return verifyUserName()"><br>
-                <input type="password" id="Password" placeholder="Password" oninput="return verifyPassword()"><br>
-                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" oninput="return verifyConfirmPassword()"><br><hr>
+                <input type="text" id="UserName" placeholder="User Name (Eg. pilot17@32554)" autocomplete="off" oninput="return verifyUserName()"><br>
+                <input type="password" id="Password" placeholder="Password" autocomplete="off" oninput="return verifyPassword()"><br>
+                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" autocomplete="off" oninput="return verifyConfirmPassword()"><br>
+                <hr>
 
                 <input type="reset" id="resetButton" value="RESET">
                 <input type="submit" id="SignUpBtn" value="SIGN-UP">
-            
+
             </form>
         </div>
     </div>
 
+    <div>
+        <p style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bolder; border: 1px dotted black; background-color: lightcoral; padding: 5px;"
+            id="pwd-creation-instructions">
+            **NOTE : PLEASE ENSURE THAT THE PASSWORD CONTAINS ATLEAST ONE <br>
+        <ul
+            style="text-align: center; list-style: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border: 1px dotted black; background-color: white; margin-top: -17px; padding-bottom: 10px;" id="pwd-requirement-list">
+            <li>~ Uppercase Letter [A-Z]</li>
+            <li>~ Lowercase Letter [a-z]</li>
+            <li>~ Digit [0-9]</li>
+            <li>~ Special Character [ @ | ; | . | , | % | $ | : | # | & ]</li>
+        </ul>
+        </p>
+    </div>
+
     <p class="QuestionToTheUser">
-        <a href="LoginPage.html">ARE YOU ALREADY A MEMBER ?</a></p>
+        <a href="LoginPage.html">ARE YOU ALREADY A MEMBER ?</a>
+    </p>
 </body>
+
 </html>
